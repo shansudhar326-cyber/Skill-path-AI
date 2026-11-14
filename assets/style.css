@@ -1,0 +1,288 @@
+/* SkillPath AI - Premium SaaS Theme */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+    --primary-bg: #eef2ff;
+    --secondary: #0ea5e9;
+    --accent: #8b5cf6;
+    --success: #10b981;
+    --success-bg: #ecfdf5;
+    --warning: #f59e0b;
+    --warning-bg: #fffbeb;
+    --danger: #ef4444;
+    --danger-bg: #fef2f2;
+    --dark: #0f172a;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --card-bg: #ffffff;
+    --page-bg: #f8fafc;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+}
+
+/* Global Font & Reset */
+html, body, [class*="css"] {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* App Background */
+.stApp {
+    background-color: var(--page-bg);
+}
+
+/* Header & Digital Twin Hero */
+.hero-banner {
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 50%, #1e1b4b 100%);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    color: #ffffff;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+}
+
+.hero-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    color: #c7d2fe;
+    margin-top: 6px;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* SaaS Metric Cards */
+.metric-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    height: 100%;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: #cbd5e1;
+}
+
+.metric-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.metric-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+}
+
+.metric-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Info Cards */
+.sp-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+}
+
+.sp-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.sp-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background: var(--primary-bg);
+    color: var(--primary);
+}
+
+.badge-success {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.badge-warning {
+    background: var(--warning-bg);
+    color: #b45309;
+}
+
+.badge-danger {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.badge-agent {
+    background: #f3e8ff;
+    color: #7e22ce;
+    border: 1px solid #e9d5ff;
+}
+
+/* AI Rescue Banner */
+.rescue-banner {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fcd34d;
+    border-left: 5px solid #f59e0b;
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.rescue-title {
+    color: #92400e;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rescue-text {
+    color: #78350f;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Roadmap Timeline Items */
+.roadmap-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.roadmap-item.completed {
+    border-left: 4px solid var(--success);
+}
+
+.roadmap-item.in-progress {
+    border-left: 4px solid var(--primary);
+    background: #faf5ff;
+}
+
+.roadmap-item.rescue {
+    border-left: 4px solid var(--warning);
+    background: #fffdf5;
+}
+
+.roadmap-item.pending {
+    border-left: 4px solid #cbd5e1;
+    opacity: 0.85;
+}
+
+/* Agent Log Activity Stream */
+.log-item {
+    padding: 10px 14px;
+    border-left: 3px solid #6366f1;
+    background: #f8fafc;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.log-meta {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+}
+
+.log-text {
+    color: var(--text-main);
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+/* Buttons and Controls */
+div.stButton > button {
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: all 0.15s ease;
+}
+
+div.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+}
+
+/* Code Preview */
+pre, code {
+    font-family: 'JetBrains Mono', monospace !important;
+}
