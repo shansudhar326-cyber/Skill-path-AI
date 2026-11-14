@@ -4,8 +4,8 @@ Analyzes career market demand, evaluates role compatibility percentages,
 identifies critical skill gaps, and forecasts future industry demands.
 """
 
-from SkillPath_AI.config import CAREER_ROLES
-from SkillPath_AI.utils.helpers import call_gemini, clean_json_response, compute_career_match_stats
+from config import CAREER_ROLES
+from utils.helpers import call_gemini, clean_json_response, compute_career_match_stats
 
 class CareerPredictionAgent:
     def __init__(self):

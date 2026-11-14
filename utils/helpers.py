@@ -8,7 +8,7 @@ import json
 import re
 import streamlit as st
 import google.generativeai as genai
-from SkillPath_AI.config import CAREER_ROLES, DEFAULT_GEMINI_MODEL, API_KEY_ENV_VAR
+from config import CAREER_ROLES, DEFAULT_GEMINI_MODEL, API_KEY_ENV_VAR
 
 def get_gemini_api_key() -> str:
     """Retrieve Gemini API key from session state, secrets, or environment variable."""

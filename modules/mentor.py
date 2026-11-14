@@ -6,12 +6,12 @@ Answers queries, simplifies concepts, recommends high-yield resources, and provi
 
 import streamlit as st
 from datetime import datetime
-from SkillPath_AI.database.db import (
+from database.db import (
     get_student_by_id, get_student_skills, get_projects,
     get_recent_submissions, get_active_rescue_plans,
     get_chat_history, save_chat_message, clear_chat_history
 )
-from SkillPath_AI.utils.helpers import call_gemini
+from utils.helpers import call_gemini
 
 def render_mentor_module(student_id: int):
     st.markdown("""

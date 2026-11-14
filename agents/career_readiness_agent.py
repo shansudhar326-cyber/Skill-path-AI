@@ -4,8 +4,8 @@ Evaluates student technical proficiency, challenge submissions, practical portfo
 and problem-solving assessments to compute an objective, transparent Career Readiness Score.
 """
 
-from SkillPath_AI.config import CAREER_ROLES, READINESS_WEIGHTS
-from SkillPath_AI.utils.helpers import call_gemini, clean_json_response, compute_career_match_stats
+from config import CAREER_ROLES, READINESS_WEIGHTS
+from utils.helpers import call_gemini, clean_json_response, compute_career_match_stats
 
 class CareerReadinessAgent:
     def __init__(self):

@@ -6,15 +6,15 @@ Tests all agents, database operations, adaptive learning loops, and roadmap adap
 import sys
 import os
 
-# Add root to sys.path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to sys.path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from SkillPath_AI.database.db import (
+from database.db import (
     init_db, seed_demo_student, authenticate_student, get_student_by_id,
     get_student_skills, get_roadmap, get_challenges_for_student,
     get_recent_submissions, get_active_rescue_plans, reset_student_to_demo
 )
-from SkillPath_AI.agents.orchestrator import AgentOrchestrator
+from agents.orchestrator import AgentOrchestrator
 
 def run_tests():
     print("==================================================")
@@ -22,12 +22,12 @@ def run_tests():
     print("==================================================")
 
     # 1. Database Init & Demo Student Seed
-    print("\n[Step 1] Initializing Database & Seeding Alex Chen...")
+    print("\n[Step 1] Initializing Database & Seeding M. Sudharshan...")
     init_db()
     seed_demo_student()
-    user = authenticate_student("alex_chen", "demo123")
+    user = authenticate_student("M.Sudharshan", "sudharsh390")
     assert user is not None, "Failed to authenticate demo student!"
-    assert user["full_name"] == "Alex Chen", f"Expected Alex Chen, got {user['full_name']}"
+    assert user["full_name"] == "M. Sudharshan", f"Expected M. Sudharshan, got {user['full_name']}"
     assert user["target_career"] == "Full Stack Developer", "Career mismatch"
     print("✅ Demo user authenticated successfully.")
 

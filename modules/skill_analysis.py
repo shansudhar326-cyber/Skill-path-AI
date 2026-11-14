@@ -8,8 +8,8 @@ import streamlit as st
 import plotly.graph_objects as go
 import networkx as nx
 import math
-from SkillPath_AI.database.db import get_student_by_id, get_student_skills
-from SkillPath_AI.agents.skill_dna_agent import SkillDNAAgent
+from database.db import get_student_by_id, get_student_skills
+from agents.skill_dna_agent import SkillDNAAgent
 
 def render_skill_analysis_module(student_id: int):
     st.markdown("""

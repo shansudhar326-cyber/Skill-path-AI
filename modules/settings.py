@@ -5,10 +5,10 @@ Controls Gemini API configuration, demo reset triggers, and agent architecture d
 
 import streamlit as st
 import os
-from SkillPath_AI.database.db import (
+from database.db import (
     reset_student_to_demo, get_connection
 )
-from SkillPath_AI.utils.helpers import get_gemini_api_key, is_gemini_available, call_gemini
+from utils.helpers import get_gemini_api_key, is_gemini_available, call_gemini
 
 def render_settings_module(student_id: int):
     st.markdown("""

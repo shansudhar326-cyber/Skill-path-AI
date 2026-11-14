@@ -7,10 +7,10 @@ compare required vs acquired skills, and benchmark against 7 major tech roles.
 import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
-from SkillPath_AI.config import CAREER_ROLES
-from SkillPath_AI.database.db import get_student_by_id, get_student_skills
-from SkillPath_AI.agents.career_prediction_agent import CareerPredictionAgent
-from SkillPath_AI.agents.orchestrator import AgentOrchestrator
+from config import CAREER_ROLES
+from database.db import get_student_by_id, get_student_skills
+from agents.career_prediction_agent import CareerPredictionAgent
+from agents.orchestrator import AgentOrchestrator
 
 def render_career_matching_module(student_id: int):
     st.markdown("""

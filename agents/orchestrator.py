@@ -4,19 +4,19 @@ Coordinates communication, event triggers, and state synchronization
 across all five specialized AI agents.
 """
 
-from SkillPath_AI.database.db import (
+from database.db import (
     get_student_by_id, get_student_skills, get_projects,
     get_certifications, get_challenges_for_student, get_recent_submissions,
     update_student_profile, save_readiness_score, clear_and_set_roadmap,
     prepend_rescue_module, record_challenge_submission, save_rescue_plan,
     log_agent_action, get_active_rescue_plans
 )
-from SkillPath_AI.agents.skill_dna_agent import SkillDNAAgent
-from SkillPath_AI.agents.career_prediction_agent import CareerPredictionAgent
-from SkillPath_AI.agents.challenge_agent import ChallengeAgent
-from SkillPath_AI.agents.learning_rescue_agent import LearningRescueAgent
-from SkillPath_AI.agents.career_readiness_agent import CareerReadinessAgent
-from SkillPath_AI.config import CAREER_ROLES
+from agents.skill_dna_agent import SkillDNAAgent
+from agents.career_prediction_agent import CareerPredictionAgent
+from agents.challenge_agent import ChallengeAgent
+from agents.learning_rescue_agent import LearningRescueAgent
+from agents.career_readiness_agent import CareerReadinessAgent
+from config import CAREER_ROLES
 
 class AgentOrchestrator:
     def __init__(self):

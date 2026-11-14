@@ -5,8 +5,8 @@ identifies missing skills, and constructs the interactive Skill DNA network grap
 """
 
 import json
-from SkillPath_AI.config import CAREER_ROLES, SKILL_RELATIONS, SKILL_TAXONOMY
-from SkillPath_AI.utils.helpers import call_gemini, clean_json_response
+from config import CAREER_ROLES, SKILL_RELATIONS, SKILL_TAXONOMY
+from utils.helpers import call_gemini, clean_json_response
 
 class SkillDNAAgent:
     def __init__(self):

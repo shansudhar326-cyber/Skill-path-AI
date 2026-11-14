@@ -8,12 +8,12 @@ import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
 from datetime import datetime
-from SkillPath_AI.database.db import (
+from database.db import (
     get_student_by_id, get_student_skills, get_projects,
     get_certifications, get_recent_submissions, get_roadmap,
     get_latest_readiness, get_readiness_history, save_readiness_score
 )
-from SkillPath_AI.agents.career_readiness_agent import CareerReadinessAgent
+from agents.career_readiness_agent import CareerReadinessAgent
 
 def render_progress_module(student_id: int):
     st.markdown("""

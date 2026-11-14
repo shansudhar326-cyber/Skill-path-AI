@@ -4,8 +4,8 @@ Generates practical real-world development challenges and rigorously evaluates s
 based on correctness, logical structure, security, and production best practices.
 """
 
-from SkillPath_AI.config import CAREER_ROLES
-from SkillPath_AI.utils.helpers import call_gemini, clean_json_response
+from config import CAREER_ROLES
+from utils.helpers import call_gemini, clean_json_response
 
 class ChallengeAgent:
     def __init__(self):

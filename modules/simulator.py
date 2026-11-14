@@ -6,11 +6,11 @@ and evaluates code on correctness, logic, security, and practical production sta
 
 import streamlit as st
 import json
-from SkillPath_AI.database.db import (
+from database.db import (
     get_student_by_id, get_challenges_for_student, get_challenge_by_id,
     get_recent_submissions
 )
-from SkillPath_AI.agents.orchestrator import AgentOrchestrator
+from agents.orchestrator import AgentOrchestrator
 
 def render_simulator_module(student_id: int):
     st.markdown("""

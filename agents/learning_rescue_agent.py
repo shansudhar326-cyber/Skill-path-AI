@@ -6,7 +6,7 @@ recommends targeted tutorials, generates scaffolded practice exercises,
 and updates the roadmap to prevent premature advancement into dependent skills.
 """
 
-from SkillPath_AI.utils.helpers import call_gemini, clean_json_response
+from utils.helpers import call_gemini, clean_json_response
 
 class LearningRescueAgent:
     def __init__(self):

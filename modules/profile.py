@@ -5,13 +5,13 @@ Manages personal information, existing technical/soft skills, proficiencies, cer
 
 import streamlit as st
 from datetime import datetime
-from SkillPath_AI.config import CAREER_ROLES, SKILL_TAXONOMY
-from SkillPath_AI.database.db import (
+from config import CAREER_ROLES, SKILL_TAXONOMY
+from database.db import (
     get_student_by_id, get_student_skills, add_or_update_skill, delete_skill,
     get_projects, add_project, delete_project,
     get_certifications, add_certification, update_student_profile
 )
-from SkillPath_AI.agents.orchestrator import AgentOrchestrator
+from agents.orchestrator import AgentOrchestrator
 
 def render_profile_module(student_id: int):
     st.markdown("""

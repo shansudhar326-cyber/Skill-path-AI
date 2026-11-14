@@ -7,15 +7,17 @@ import streamlit as st
 import os
 import sys
 
-# Ensure project root is in sys.path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Ensure project root is in sys.path (works on Streamlit Cloud where repo root = app root)
+_PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
 
-from SkillPath_AI.config import APP_NAME, APP_SUBTITLE, APP_VERSION, CAREER_ROLES
-from SkillPath_AI.database.db import (
+from config import APP_NAME, APP_SUBTITLE, APP_VERSION, CAREER_ROLES
+from database.db import (
     init_db, seed_demo_student, authenticate_student, create_student,
     get_student_by_id, reset_student_to_demo
 )
-from SkillPath_AI.modules import (
+from modules import (
     render_dashboard_module,
     render_profile_module,
     render_skill_analysis_module,
@@ -26,7 +28,7 @@ from SkillPath_AI.modules import (
     render_mentor_module,
     render_settings_module
 )
-from SkillPath_AI.utils.helpers import is_gemini_available, get_gemini_api_key
+from utils.helpers import is_gemini_available, get_gemini_api_key
 
 # Page Configuration
 st.set_page_config(

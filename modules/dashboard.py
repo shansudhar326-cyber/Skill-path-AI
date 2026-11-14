@@ -6,13 +6,13 @@ multi-agent activity stream, and real-time status alerts.
 
 import streamlit as st
 import plotly.graph_objects as go
-from SkillPath_AI.database.db import (
+from database.db import (
     get_student_by_id, get_student_skills, get_projects,
     get_roadmap, get_latest_readiness, get_active_rescue_plans,
     get_agent_logs, get_recent_submissions
 )
-from SkillPath_AI.config import CAREER_ROLES
-from SkillPath_AI.utils.helpers import compute_career_match_stats
+from config import CAREER_ROLES
+from utils.helpers import compute_career_match_stats
 
 def render_dashboard_module(student_id: int):
     student = get_student_by_id(student_id)
