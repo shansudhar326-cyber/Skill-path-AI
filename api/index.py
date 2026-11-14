@@ -1142,8 +1142,13 @@ def mentor_chat_action():
         save_chat_message(sid, "user", msg)
         student = get_student_by_id(sid)
         skills = [s["skill_name"] for s in get_student_skills(sid)]
-        from modules.mentor import _generate_fallback_mentor_reply
-        reply = _generate_fallback_mentor_reply(msg, student, student["target_career"], skills)
+        from utils.helpers import call_gemini
+        prompt = f"You are a career mentor AI. The student targets '{student['target_career']}' and knows {', '.join(skills)}. Answer: {msg}"
+        ai_reply, is_real = call_gemini(prompt)
+        if is_real and ai_reply:
+            reply = ai_reply
+        else:
+            reply = f"Great question! As someone targeting **{student['target_career']}** with skills in {', '.join(skills)}, I'd recommend focusing on your skill gaps first. Check your Skill DNA and Learning Roadmap for a personalized plan. Keep practicing and building projects — consistency is key! 🚀"
         save_chat_message(sid, "assistant", reply)
     return redirect(url_for("mentor"))
 

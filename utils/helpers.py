@@ -6,22 +6,32 @@ Handles Gemini API integration, JSON extraction, and domain calculations.
 import os
 import json
 import re
-import streamlit as st
 import google.generativeai as genai
 from config import CAREER_ROLES, DEFAULT_GEMINI_MODEL, API_KEY_ENV_VAR
 
+# Streamlit is optional — not available on Vercel (Flask-only deployment)
+try:
+    import streamlit as st
+    _HAS_STREAMLIT = True
+except ImportError:
+    _HAS_STREAMLIT = False
+
 def get_gemini_api_key() -> str:
     """Retrieve Gemini API key from session state, secrets, or environment variable."""
-    # 1. Check Streamlit session state
-    if "gemini_api_key" in st.session_state and st.session_state["gemini_api_key"]:
-        return st.session_state["gemini_api_key"].strip()
-    
-    # 2. Check Streamlit secrets
-    try:
-        if "GEMINI_API_KEY" in st.secrets:
-            return st.secrets["GEMINI_API_KEY"].strip()
-    except Exception:
-        pass
+    # 1. Check Streamlit session state (only if Streamlit is loaded)
+    if _HAS_STREAMLIT:
+        try:
+            if "gemini_api_key" in st.session_state and st.session_state["gemini_api_key"]:
+                return st.session_state["gemini_api_key"].strip()
+        except Exception:
+            pass
+
+        # 2. Check Streamlit secrets
+        try:
+            if "GEMINI_API_KEY" in st.secrets:
+                return st.secrets["GEMINI_API_KEY"].strip()
+        except Exception:
+            pass
 
     # 3. Check OS environment variable
     return os.environ.get(API_KEY_ENV_VAR, "").strip()

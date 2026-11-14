@@ -1,0 +1,13 @@
+# Exclude files not needed by Vercel Flask API
+venv/
+__pycache__/
+*.pyc
+.streamlit/
+skillpath.db
+test_flow.py
+Procfile
+assets/
+.git/
+requirements-streamlit.txt
+app.py
+modules/

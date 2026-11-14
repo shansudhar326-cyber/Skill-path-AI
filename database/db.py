@@ -726,5 +726,17 @@ def _seed_student_data(student_id: int):
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, challenge_data)
 
+    # Initial challenges for Full Stack Developer
+    challenge_data = [
+        (student_id, 'Full Stack Developer', 'Build a Login Page', 'Create a responsive login page with form validation using HTML, CSS, and JavaScript.', 'Intermediate', '', '', '{}', 'Assigned'),
+        (student_id, 'Full Stack Developer', 'Build a REST API', 'Create a RESTful API with CRUD endpoints for managing a user resource using Node.js and Express.', 'Intermediate', '', '', '{}', 'Assigned'),
+        (student_id, 'Full Stack Developer', 'Connect a Database', 'Write a Python script that connects to SQLite, creates a table, and performs CRUD operations.', 'Beginner', '', '', '{}', 'Assigned'),
+        (student_id, 'Full Stack Developer', 'Create a React Component', 'Build a reusable React card component that accepts props and handles click events.', 'Intermediate', '', '', '{}', 'Assigned'),
+    ]
+    cursor.executemany("""
+        INSERT INTO challenges (student_id, career_role, title, description, difficulty, starter_code, expected_output, rubrics_json, status)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, challenge_data)
+
     conn.commit()
     conn.close()
